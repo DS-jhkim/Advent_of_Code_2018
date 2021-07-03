@@ -40,10 +40,15 @@ def part_2():
                             commonStr = line1[0 : i : ] + line1[i+1 : : ]
         # Check if commonStr is not empty
         if commonStr:
+            # Assign the common string and its appearance count to the dictionary
             dict[commonStr] = diffSum
+
+            # Since the problem is asking the common string with the highest appearance,
+            # counting the apperance of same commonStr multiple times does not matter here. 
+            # However, this should be improved in the nested loop if actual apperance count is required.
         
     # Print the common string with the highest appearance
     print(max(dict, key = dict.get))
-            
+    
 part_1()     
 part_2()
