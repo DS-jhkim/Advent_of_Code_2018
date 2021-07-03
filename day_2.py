@@ -21,6 +21,7 @@ def part_2():
     dict = {} 
     
     # Need to check all other lines for each line: Nested Loops 
+    # This should be modified if the actual apperance count is asked.
     for line1 in lines:
         diffSum = 0
         commonStr = ""
@@ -29,7 +30,7 @@ def part_2():
             for i in range(len(line1)):
                 if line1[i] != line2[i]:
                     diffCounter += 1
-            # Check two strings are differend by a single character
+            # Check two strings are differed by a single character
             if diffCounter == 1:
                 diffSum += 1
                 # This part can be improved to avoid reptition 
@@ -42,11 +43,7 @@ def part_2():
         if commonStr:
             # Assign the common string and its appearance count to the dictionary
             dict[commonStr] = diffSum
-
-            # Since the problem is asking the common string with the highest appearance,
-            # counting the apperance of same commonStr multiple times does not matter here. 
-            # However, this should be improved in the nested loop if actual apperance count is required.
-        
+            
     # Print the common string with the highest appearance
     print(max(dict, key = dict.get))
     
