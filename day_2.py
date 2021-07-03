@@ -32,10 +32,10 @@ def part_2():
             # Check two strings are differend by a single character
             if diffCounter == 1:
                 diffSum += 1
+                # This part can be improved to avoid reptition 
                 for i in range(len(line1)):
                     if line1[i] != line2[i]:
                         # To avoid repetition of assigning same string
-                        # This can be improved to increase efficiency
                         if not commonStr:
                             commonStr = line1[0 : i : ] + line1[i+1 : : ]
         # Check if commonStr is not empty
